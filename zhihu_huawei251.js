@@ -92,7 +92,7 @@ async function C() {
 	    if(r && r[1]) {
 	        console.log(r[1]);
 	        Comm(r[1]);
-	        await sleep(15000);
+	        await sleep(30000);
 	    }
 	}
 }
