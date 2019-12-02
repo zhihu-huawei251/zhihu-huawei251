@@ -21,28 +21,29 @@ async function update_batch(offset, url) {
         .then(async(j) => {
             for(let ans of j["data"]) {
                 update(ans["id"]);
-                await sleep(10000);
+                await sleep(15000);
             }
             if(j["paging"]["is_end"]) {
                 console.log("DONE!");
             }
             else {
-                await sleep(30000);
+                await sleep(45000);
                 update_batch(offset+batch_size, url);
             }
         });
 }
 
-function update(id) {
+async function update(id) {
     console.log(id);
     let url ='https://www.zhihu.com/api/v4/answers/' + id + '?include=content';
     fetch(url)
         .then((e) => (e.json()))
-        .then((j) => {
+        .then(async(j) => {
             let content = j["content"];
             console.log(content.substr(0,25) + '...');
             if(content.search(keyw) == -1) {
                 content += suff;
+                await sleep(4000);
                 fetch(url, {
                     method: 'PUT',
                     body: JSON.stringify({
