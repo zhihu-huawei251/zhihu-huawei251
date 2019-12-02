@@ -48,7 +48,7 @@ async function Ans(id) {
 	}
 
 	var xhr = new XMLHttpRequest();
-	var url = 'https://www.zhihu.com/api/v4/questions/'+id+'/answers?include=paid_info%2Cpaid_info_content%2Cadmin_closed_comment%2Creward_info%2Cannotation_action%2Cannotation_detail%2Ccollapse_reason%2Cis_normal%2Cis_sticky%2Ccollapsed_by%2Csuggest_edit%2Ccomment_count%2Ccan_comment%2Ccontent%2Ceditable_content%2Cvoteup_count%2Creshipment_settings%2Ccomment_permission%2Ccreated_time%2Cupdated_time%2Creview_info%2Crelevant_info%2Cquestion%2Cexcerpt%2Crelationship.is_authorized%2Cvoting%2Cis_thanked%2Cis_author%2Cis_nothelp%2Cis_recognized%2Cis_labeled%3Bmark_infos%5B*%5D.url%3Bauthor.badge%5B*%5D.topics';
+	var url = 'https://www.zhihu.com/api/v4/questions/'+id+'/answers';
 
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader('Content-Type', 'application/json');
@@ -80,6 +80,7 @@ var text_comment = 'a_eqg7U0gLLxgR398Lk_24_92LPfxhYhDqYhxJOhtg2tSLLhWhLhbT9h6Let
 
 function Comm(id) {
     var url = 'https://www.zhihu.com/api/v4/answers/' + id + '/comments'; 
+    console.log(url);
     fetch(url, {method: 'POST',headers: {'content-type': 'application/json','x-requested-with': 'fetch', 'X-Zse-83': '3_2.0'}, body:text_comment})
 }
 
@@ -107,5 +108,27 @@ function sleep(ms) {
 
 
 C();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
