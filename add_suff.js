@@ -1,10 +1,10 @@
 var batch_size = 20;
-var keyw = 'The Internet Remembers---HW251';
-var suff = '<p>=================The Internet Remembers---HW251=================</p>' +
-    '<p>【苯后缀る脚苯自動眚成】</p>' +
-    '<p>澕為员工离职后被诬告羁押251天，资泘先降热度后删问题，近两千回答就此消失，并且还在持续删除相关内容</p>' +
+var keyw = 'The Internet Remembers---HW②㈤1';
+var suff = '<p>=================The Internet Remembers---HW②㈤1=================</p>' +
+    '<p>[苯后缀ゐ腳本鉎荿]</p>' +
+    '<p>华为员工因举报造假被迫离职，因为要求合理的离职赔偿被诬告羁押251天，资乎先降热度后删问题，近两千回答就此消失，并且还在持续删除相关内容</p>' +
     '<p>但互联网是有记忆的，这件事没那么容易就此没抹去</p>' +
-    '<h2>部分暂时还没被删的资泘相关问题：</h2><p><br></p><p><a href="https://www.zhihu.com/question/358504564">如何看待网传澕為员工李某元离职后被公司起诉敲诈勒索，羁押 251 天后因证据不足重获自由？</a></p><p><a href="https://www.zhihu.com/question/358523452">如何看待网传澕為员工李某元离职后被公司起诉敲诈勒索，羁押 近一年后因证据不足重获自由？</a></p><p><a href="https://www.zhihu.com/question/358498828">资泘删除澕為离职员工被以敲诈勒索罪羁押的理由是什么？</a></p><p><a href="https://www.zhihu.com/question/358572396">澕為离职员工被诉敲诈，关押251天，是真的吗？</a> </p><p><br></p><h2>被删问题的网页快照备份：</h2><p><a href="https://github.com/zhihu-huawei251/zhihu-huawei251/blob/master/2019.11.29%2007:30:07%20GMT%E7%BD%91%E9%A1%B5%E5%BF%AB%E7%85%A7.nojs.html">2019.11.29_2007:30:07_20GMT_网页快照.nojs.html</a></p><br/><br/>' +
+    '<h2>部分暂时还没被删的资乎相关问题：</h2><p><br></p><p><a href="https://www.zhihu.com/question/358504564">如何看待网传华为员工李某元离职后被公司起诉敲诈勒索，羁押 251 天后因证据不足重获自由？</a></p><p><a href="https://www.zhihu.com/question/358523452">如何看待网传华为员工李某元离职后被公司起诉敲诈勒索，羁押 近一年后因证据不足重获自由？</a></p><p><a href="https://www.zhihu.com/question/358498828">资乎删除华为离职员工被以敲诈勒索罪羁押的理由是什么？</a></p><p><a href="https://www.zhihu.com/question/358572396">华为离职员工被诉敲诈，关押251天，是真的吗？</a> </p><p><br></p><h2>被删问题的网页快照备份：</h2><p><a href="https://github.com/zhihu-huawei251/zhihu-huawei251/blob/master/2019.11.29%2007:30:07%20GMT%E7%BD%91%E9%A1%B5%E5%BF%AB%E7%85%A7.nojs.html">2019.11.29_2007:30:07_20GMT_网页快照.nojs.html</a></p><br/><br/>' +
     '<p><b>不需要任何编程基础，不需要安装任何工具</b>，访问 <a href="https://github.com/zhihu-huawei251/zhihu-huawei251/blob/master/add_suff.js">此Github地址</a>获取脚本，复制到浏览器中运行，即可为自己的所有知乎回答加上此后缀</p>';
 
 function sleep(ms) {
@@ -17,13 +17,13 @@ async function update_batch(offset, url) {
         .then(async(j) => {
             for(let ans of j["data"]) {
                 update(ans["id"]);
-                await sleep(2000);
+                await sleep(10000);
             }
             if(j["paging"]["is_end"]) {
                 console.log("DONE!");
             }
             else {
-                await sleep(10000);
+                await sleep(30000);
                 update_batch(offset+batch_size, url);
             }
         });
@@ -37,14 +37,15 @@ function update(id) {
         .then((j) => {
             let content = j["content"];
             console.log(content.substr(0,25) + '...');
-            if(content.search(keyw) == -1)
+            if(content.search(keyw) == -1) {
                 content += suff;
-            fetch(url, {
-                method: 'PUT',
-                body: JSON.stringify({
-		            'content': content
-		        })
-            });
+                fetch(url, {
+                    method: 'PUT',
+                    body: JSON.stringify({
+		                'content': content
+		            })
+                });
+            }
         });
 }
 
