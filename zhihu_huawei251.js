@@ -16,6 +16,7 @@ var text_ans =
     '因此，我决定发起这场行为艺术，用技术和人民群众的汪洋大海对抗资本对言论、信息自由的压制，维护法律尊严</p>' +
     '<p>同时，我建议大家应该不仅仅关注华为，还应考虑向纪委检举当地公检法</p>' + 
     '<h2>部分暂时还没被删的资乎相关问题：</h2><p><br></p><p><a href="https://www.zhihu.com/question/358504564">如何看待网传华为员工李某元离职后被公司起诉敲诈勒索，羁押 251 天后因证据不足重获自由？</a></p><p><a href="https://www.zhihu.com/question/358523452">如何看待网传华为员工李某元离职后被公司起诉敲诈勒索，羁押 近一年后因证据不足重获自由？</a></p><p><a href="https://www.zhihu.com/question/358498828">资乎删除华为离职员工被以敲诈勒索罪羁押的理由是什么？</a></p><p><a href="https://www.zhihu.com/question/358572396">华为离职员工被诉敲诈，关押251天，是真的吗？</a> </p><p><br></p><h2>被删问题的网页快照备份：</h2><p><a href="https://github.com/zhihu-huawei251/zhihu-huawei251/blob/master/2019.11.29%2007:30:07%20GMT%E7%BD%91%E9%A1%B5%E5%BF%AB%E7%85%A7.nojs.html">2019.11.29_2007:30:07_20GMT_网页快照.nojs.html</a></p><br/><br/>' +
+    '<h2>相关项目：</h2><p><a href="https://github.com/evil-huawei/evil-huawei/tree/master/events/%E5%8D%8E%E4%B8%BA%E5%91%98%E5%B7%A5%E7%A6%BB%E8%81%8C%E8%A2%AB%E5%85%AC%E5%8F%B8%E8%B5%B7%E8%AF%89%E5%B9%B6%E7%BE%81%E6%8A%BC%20251%20%E5%A4%A9">evil-huawei/evil-huawei（<b>简介:</b>由于部分内容被控评和删帖，已经无法在中文互联网搜索到，所以本项目将收集华为作过的恶，记录这些不应该被遗忘的历史。）</a><p><br/><br/>' +
     '<p><b>不需要任何编程基础</b>，访问 <a href="https://github.com/zhihu-huawei251/zhihu-huawei251/blob/master/zhihu_huawei251.js">此Github地址</a> 获取自动群发脚本，复制到浏览器中运行，即可参与这场 <b>#行为艺术</b></p>' +
     '<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>' + 
     '<p>以下随机内容，防自动被删：</p>';
